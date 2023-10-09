@@ -1,7 +1,7 @@
 import requests
 
 def example_get_request():
-    # Example 1: Making a GET request to a public API
+    # Usage 1: Making a GET request to a public API
     response = requests.get('https://jsonplaceholder.typicode.com/posts/1')
     
     # Check if the request was successful (status code 200)
@@ -14,7 +14,7 @@ def example_get_request():
         print("Example 1 - GET Request failed. Status Code:", response.status_code)
 
 def example_post_request():
-    # Example 2: Making a POST request with data
+    # Usage 2: Making a POST request with data
     data = {'title': 'foo', 'body': 'bar', 'userId': 1}
     response = requests.post('https://jsonplaceholder.typicode.com/posts', json=data)
     
@@ -28,7 +28,7 @@ def example_post_request():
         print("Example 2 - POST Request failed. Status Code:", response.status_code)
 
 def example_json_parsing():
-    # Example 3: Handling response content (JSON parsing)
+    # Usage 3: Handling response content (JSON parsing)
     response = requests.get('https://jsonplaceholder.typicode.com/posts/1')
     
     # Check if the request was successful (status code 200)
