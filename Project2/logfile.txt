@@ -1,0 +1,6 @@
+2023-10-25 12:00:00 - Application started
+2023-10-25 12:05:00 - User logged in
+2023-10-25 12:10:30 - Error: Database connection failed
+2023-10-25 12:15:45 - Warning: Disk space low
+2023-10-25 12:20:00 - User logged out
+2023-10-25 12:25:15 - Application stopped
