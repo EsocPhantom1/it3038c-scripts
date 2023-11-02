@@ -1,24 +1,26 @@
 import requests
+from bs4 import BeautifulSoup
 
-# url where Node.js is running
-node_api_url = "http://localhost:3000/"
+# URL where Node.js API is running
+node_api_url = "http://localhost:3001/"
 
 try:
-    # Make a GET request to the Node.js API for all widgets
-    response_all_widgets = requests.get(f"{node_api_url}")
+    # Make a GET request to the Node.js API for HTML
+    response_html = requests.get(f"{node_api_url}")
 
     # Check if the request was successful (status code 200)
-    if response_all_widgets.status_code == 200:
-        # Parse JSON response
-        widgets_all = response_all_widgets.json()
+    if response_html.status_code == 200:
+        # Parse HTML content using BeautifulSoup
+        soup = BeautifulSoup(response_html.text, 'html.parser')
 
-        # Print all widget names and colors 
-        print("All widgets:")
-        for widget in widgets_all:
-            print(f"{widget['name']} is {widget['color']}.")
+        # Extract widget information
+        widgets = soup.find('p').get_text()
+
+        # Print the widget information
+        print(widgets)
 
     else:
-        print(f"Error: {response_all_widgets.status_code} - {response_all_widgets.text}")
+        print(f"Error: {response_html.status_code} - {response_html.text}")
 
 except requests.RequestException as e:
     print(f"Request failed: {e}")
