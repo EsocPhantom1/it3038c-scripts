@@ -1,7 +1,7 @@
 import requests
 
 # url where Node.js is running
-node_api_url = "http://localhost:3001/"
+node_api_url = "http://localhost:3000/"
 
 try:
     # Make a GET request to the Node.js API for all widgets
